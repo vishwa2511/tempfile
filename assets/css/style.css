@@ -1,0 +1,568 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/************************* Reset CSS Start *************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+  font-size: 100%;
+  font-weight: 300;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: 'Zoho Puvi';
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  white-space: revert;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/************************* Reset CSS End *************************/
+/************************* root CSS Start *************************/
+:root {
+  --primary-color: #525659;
+  --secondary-color: #f0483f;
+  --black-color: #000;
+  --white-color: #fff;
+  --pink-color: #ffece8;
+  --sandel-color: #fef6e3;
+  --light-green-color: #e8ffe0;
+  --light-blue-color: #e0f7ff;
+  --gray-color: #ddd;
+  --h1-text: clamp(10px, 4vw, 10rem);
+  --h2-text: clamp(22px, 3.3vw, 42px);
+  --h3-text: clamp(20px, 3vw, 32px);
+  --h4-text: clamp(13px, 2.4vw, 20px);
+  --h5-text: clamp(12px, 2vw, 60px);
+  --h6-text: clamp(13px, 2vw, 60px);
+  --p-text: clamp(12px, 2vw, 16px);
+}
+/************************* root CSS End *************************/
+/************************* Resuse CSS Start *************************/
+.sprite {
+  background: url("../image/affiliated_logos.png") no-repeat 0 0;
+  background-size: auto;
+  display: inline-block;
+}
+.sprite-icon {
+  background: url("../image/why_icons.png") no-repeat 0 0;
+  background-size: auto;
+  display: inline-block;
+}
+.default-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.col-50 {
+  width: 50%;
+}
+.col-65 {
+  width: 65%;
+}
+.col-35 {
+  width: 35%;
+}
+.btn-fill {
+  font-size: var(--p-text);
+  color: var(--white-color);
+  background-color: var(--secondary-color);
+  padding: 15px 40px;
+  font-weight: bold;
+  transition: all 0.7s ease-in-out;
+  border: 1px solid transparent;
+}
+.btn-fill:hover {
+  color: var(--secondary-color);
+  background-color: var(--white-color);
+  border-color: var(--secondary-color);
+}
+/************************* Resuse CSS End *************************/
+.main-img {
+  position: absolute;
+  max-width: 1536px;
+  left: calc(50% - 768px);
+  top: 0px;
+  opacity: 0.5;
+}
+html {
+  color-scheme: dark light;
+}
+html body .default-container {
+  Width: min(90%, 1170px);
+  margin: 0 auto;
+}
+html body header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  background-color: white;
+}
+html body header .default-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 31px 2px 31px 4px;
+}
+html body header .default-container .logo {
+  background-image: url(../image/logo.png);
+  width: 140px;
+  height: 42px;
+}
+html body header .default-container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+html body header .default-container nav a {
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 500;
+  color: var(--black-color);
+  letter-spacing: 0.8px;
+}
+html body header .default-container .menu {
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+html body header .default-container .menu .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px auto;
+  transition: all 0.6s ease-in-out;
+}
+html body header .default-container .menu.active .bar:nth-child(2) {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+html body header .default-container .menu.active .bar:nth-child(1) {
+  transform: translatey(8px) rotate(45deg);
+}
+html body header .default-container .menu.active .bar:nth-child(3) {
+  transform: translatey(-8px) rotate(-45deg);
+}
+html body main {
+  padding-top: 104px;
+}
+html body main section.hero-banner .default-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+html body main section.hero-banner .default-container .h2 {
+  font-size: var(--h2-text);
+  font-weight: 900;
+  width: 50%;
+  text-align: center;
+  margin: 0px auto;
+  line-height: 1.5;
+}
+html body main section.hero-banner .default-container p {
+  text-align: center;
+  margin: 30px 0px;
+  font-size: var(--p-text);
+}
+html body main section.client .default-container {
+  margin: 120px auto;
+  Width: min(90%, 900px);
+  padding: 50px 40px;
+  border-radius: 10px;
+  border: 1px solid var(--black-color);
+}
+html body main section.client .default-container P {
+  font-size: var(--p-xl-text);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+html body main section.client .default-container .client-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+html body main section.client .default-container .client-list span {
+  height: 40px;
+  background: url("../image/affiliated_logos.png") no-repeat 0 0;
+  background-size: auto;
+  display: inline-block;
+}
+html body main section.client .default-container .client-list span:nth-child(1) {
+  background-position: 0 -1px;
+  width: 80px;
+}
+html body main section.client .default-container .client-list span:nth-child(2) {
+  background-position: -99px -1px;
+  width: 100px;
+}
+html body main section.client .default-container .client-list span:nth-child(3) {
+  background-position: -235px 0px;
+  width: 80px;
+}
+html body main section.client .default-container .client-list span:nth-child(4) {
+  background-position: -354px 0;
+  width: 40px;
+}
+html body main section.client .default-container .client-list span:nth-child(5) {
+  background-position: -432px -1px;
+  width: 114px;
+}
+html body main section.client .default-container .client-list span:nth-child(6) {
+  background-position: -587px 0px;
+  width: 100px;
+}
+html body main section.client .default-container .client-list span:nth-child(7) {
+  background-position: -728px -3px;
+  width: 46px;
+}
+html body main section.client .default-container .client-list span:nth-child(8) {
+  background-position: -818px -1px;
+  width: 56px;
+}
+html body main section.why-choose .default-container .h2 {
+  font-size: var(--h2-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 100px;
+}
+html body main section.why-choose .default-container .details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: unset;
+}
+html body main section.why-choose .default-container .details-container .h3 {
+  font-size: var(--h3-text);
+  font-weight: 700;
+  margin: 20px 0px;
+}
+html body main section.why-choose .default-container .details-container p {
+  font-size: var(--p-text);
+  line-height: 28px;
+}
+html body main section.why-choose .default-container .details-container .col-50 {
+  padding: 120px 60px;
+  border: 1px solid var(--white-color);
+  position: relative;
+}
+html body main section.why-choose .default-container .details-container .col-50 span {
+  background: url("../image/why_icons.png") no-repeat 0 0;
+  background-size: auto;
+  display: inline-block;
+  height: 60px;
+}
+html body main section.why-choose .default-container .details-container .col-50 .count {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  font-size: 74px;
+  font-weight: 700;
+  -webkit-text-stroke: 0.4px #555;
+  color: transparent;
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(1) {
+  background-color: var(--pink-color);
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(1) span {
+  background-position: -20px -5px;
+  width: 78px;
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(2) {
+  background-color: var(--sandel-color);
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(2) span {
+  background-position: -139px -6px;
+  width: 74px;
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(3) {
+  background-color: var(--light-green-color);
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(3) span {
+  background-position: -263px -1px;
+  width: 64px;
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(4) {
+  background-color: var(--light-blue-color);
+}
+html body main section.why-choose .default-container .details-container .col-50:nth-child(4) span {
+  background-position: -376px -10px;
+  width: 74px;
+}
+html body main section.canu-you-do .default-container {
+  margin-top: 100px;
+}
+html body main section.canu-you-do .default-container .h2 {
+  font-size: var(--h2-text);
+  font-weight: 700;
+  width: 500px;
+  line-height: 1.2;
+}
+html body main section.canu-you-do .default-container .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+html body main section.canu-you-do .default-container .content p {
+  font-size: var(--p-text);
+  line-height: 24px;
+}
+html body main section.canu-you-do .default-container .content .h4 {
+  font-size: var(--h4-text);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+html body main section.text-use .default-container {
+  margin-top: 120px;
+}
+html body main section.text-use .default-container .h2 {
+  font-size: var(--h2-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 100px;
+}
+html body main section.text-use .default-container .text-content {
+  max-width: 860px;
+  margin: 0px auto;
+}
+html body main section.text-use .default-container .text-content p {
+  font-size: var(--p-text);
+  line-height: 28px;
+  width: 82%;
+  margin: 0px auto;
+  text-align: center;
+  position: relative;
+}
+html body main section.text-use .default-container .text-content p span {
+  background-image: url(../image/quote.png);
+  width: 28px;
+  height: 24px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: -11px;
+  top: 0;
+}
+html body main section.text-use .default-container .text-content .bar {
+  display: flex;
+  gap: 5px;
+  width: 60%;
+  margin: 50px auto;
+}
+html body main section.text-use .default-container .text-content .bar span {
+  width: 33.33%;
+  background-color: var(--gray-color);
+  height: 2px;
+  display: block;
+}
+html body main section.text-use .default-container .text-content .bar span.active {
+  background: var(--secondary-color);
+}
+html body main section.text-use .default-container .text-content .test-mo {
+  display: flex;
+}
+html body main section.text-use .default-container .text-content .test-mo .image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+html body main section.text-use .default-container .text-content .test-mo .image img {
+  object-fit: cover;
+  width: 100%;
+}
+html footer {
+  margin: 120px 0px;
+}
+html footer .default-container {
+  background-color: #1d1b28;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  border-radius: 5px;
+  color: var(--white-color);
+}
+html footer .default-container .h2 {
+  font-size: var(--h3-text);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+}
+html footer .default-container p {
+  font-size: var(--p-text);
+  line-height: 28px
+        ;
+  width: 55%;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+html .scrolltopBtn {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  display: block;
+  visibility: hidden;
+  padding: 5px;
+  background: #000;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+}
+html .scrolltopBtn:hover {
+  transform: translate3d(0, -10px, 0);
+}
+html .scrolltopBtn.active {
+  visibility: visible;
+}
+html .scrolltopBtn::after {
+  content: "";
+  position: absolute;
+  left: 17px;
+  z-index: 11;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  top: 20px;
+  transform: rotate(45deg);
+}
+/*************************** Animation Class Start ***************************/
+.animateCls {
+  transition: all 0.8s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+.animateCls.fadeUp {
+  -moz-transform: translateY(30px);
+  -ms-transform: translateY(30px);
+  -webkit-transform: translateY(30px);
+  transform: translateY(30px);
+}
+.animateCls.fadeDown {
+  -moz-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+}
+.animateCls.fadeLeft {
+  -moz-transform: translateX(-30px);
+  -ms-transform: translateX(-30px);
+  -webkit-transform: translateX(-30px);
+  transform: translateX(-30px);
+}
+.animateCls.fadeRight {
+  -moz-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  -webkit-transform: translateX(30px);
+  transform: translateX(30px);
+}
+.animateCls.animatedCls {
+  visibility: visible;
+  opacity: 1;
+}
+.animateCls.animatedCls.fadeUp {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.animateCls.animatedCls.fadeDown {
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.animateCls.animatedCls.fadeLeft {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.animateCls.animatedCls.fadeRight {
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+/*************************** Animation Class End ***************************/
+/*************************** Keyframes Start *****************************/
+@keyframes bounceTopDown {
+  0%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*************************** Keyframes End *****************************/
+/*************************** Responisve Start ***************************/
+@media only screen and (max-width: 860px) {
+  html body main section.why-choose .default-container .details-container {
+    flex-direction: column;
+  }
+  html body main section.why-choose .default-container .details-container .col-50 {
+    width: 100%;
+    padding: 50px 50px;
+  }
+}
+/*************************** Responisve End ***************************/

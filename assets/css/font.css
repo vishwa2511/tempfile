@@ -1,0 +1,130 @@
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Semibold.eot');
+    src: url('fonts/ZohoPuvi-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Semibold.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Semibold.woff') format('woff'),
+        url('fonts/ZohoPuvi-Semibold.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Semibold.svg#ZohoPuvi-Semibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Light.eot');
+    src: url('fonts/ZohoPuvi-Light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Light.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Light.woff') format('woff'),
+        url('fonts/ZohoPuvi-Light.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Light.svg#ZohoPuvi-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Regular.eot');
+    src: url('fonts/ZohoPuvi-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Regular.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Regular.woff') format('woff'),
+        url('fonts/ZohoPuvi-Regular.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Regular.svg#ZohoPuvi-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Medium.eot');
+    src: url('fonts/ZohoPuvi-Medium.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Medium.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Medium.woff') format('woff'),
+        url('fonts/ZohoPuvi-Medium.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Medium.svg#ZohoPuvi-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Extrablack.eot');
+    src: url('fonts/ZohoPuvi-Extrablack.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Extrablack.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Extrablack.woff') format('woff'),
+        url('fonts/ZohoPuvi-Extrablack.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Extrablack.svg#ZohoPuvi-Extrablack') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Extralight.eot');
+    src: url('fonts/ZohoPuvi-Extralight.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Extralight.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Extralight.woff') format('woff'),
+        url('fonts/ZohoPuvi-Extralight.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Extralight.svg#ZohoPuvi-Extralight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Thin.eot');
+    src: url('fonts/ZohoPuvi-Thin.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Thin.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Thin.woff') format('woff'),
+        url('fonts/ZohoPuvi-Thin.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Thin.svg#ZohoPuvi-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Black.eot');
+    src: url('fonts/ZohoPuvi-Black.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Black.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Black.woff') format('woff'),
+        url('fonts/ZohoPuvi-Black.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Black.svg#ZohoPuvi-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Extrabold.eot');
+    src: url('fonts/ZohoPuvi-Extrabold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Extrabold.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Extrabold.woff') format('woff'),
+        url('fonts/ZohoPuvi-Extrabold.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Extrabold.svg#ZohoPuvi-Extrabold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Zoho Puvi';
+    src: url('fonts/ZohoPuvi-Bold.eot');
+    src: url('fonts/ZohoPuvi-Bold.eot?#iefix') format('embedded-opentype'),
+        url('fonts/ZohoPuvi-Bold.woff2') format('woff2'),
+        url('fonts/ZohoPuvi-Bold.woff') format('woff'),
+        url('fonts/ZohoPuvi-Bold.ttf') format('truetype'),
+        url('fonts/ZohoPuvi-Bold.svg#ZohoPuvi-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
