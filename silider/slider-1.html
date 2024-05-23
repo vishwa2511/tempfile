@@ -17,6 +17,7 @@
         white-space: nowrap;
         overflow: hidden;
         cursor: pointer;
+        scroll-behavior: smooth;
     }
 
     img {
@@ -29,31 +30,171 @@
     img:first-child {
         margin-left: 0px;
     }
+
+    .indicator {
+        width: 100px;
+        background-color: blue;
+        height: 20px;
+    }
+
+    .indicator.active {
+        background-color: red;
+    }
 </style>
 
 <body>
 
     <div class="wrapper">
-        <button>1</button>
+        <button class="rrtt">1</button>
         <div class="row">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
-            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi1">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi15">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi4">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi7">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi5">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset=""
+                data-value="vi4">
 
         </div>
         <button class="dd">2</button>
+        <div class="indicators"></div>
     </div>
 
     <script>
-        var rows = document.querySelector(".row");
-        document.querySelector(".dd").addEventListener("click",(e)=>{
-            // rows.scrollLeft
-            console.log(e);
-        })
-        
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     var row = document.querySelector(".row");
+        //     var images = row.querySelectorAll("img");
+        //     var clienTWidth = images[0].clientWidth;
+        //     let timer;
+        //     document.querySelector(".dd").addEventListener("click", function (e) {
+
+        //         addSlider();
+        //         // var firstVisibleImageIndex = Math.floor(row.scrollLeft / (clienTWidth + 15));
+        //         // var firstVisibleImageDataValue = images[firstVisibleImageIndex].getAttribute("data-value");
+        //         // e.target.innerText = firstVisibleImageDataValue;
+
+
+        //     });
+        //     document.querySelector(".dd").addEventListener("mouseenter", function (e) {
+        //         clearInterval(timer);
+        //     });
+        //     document.querySelector(".dd").addEventListener("mouseleave", function (e) {
+        //         autotimer();
+        //     });
+
+        //     function addSlider() {
+        //         if (row.scrollLeft + row.offsetWidth >= row.scrollWidth) {
+        //             row.scrollLeft = 0; // Reset scroll if reached the end
+
+        //         } else {
+        //             row.scrollLeft += clienTWidth + 15;
+        //         }
+        //     }
+        //     document.querySelector(".rrtt").addEventListener("click", function () {
+        //         row.scrollLeft + row.offsetWidth <= row.scrollWidth ? row.scrollLeft = 0 : row.scrollLeft -= clienTWidth + 15;
+
+        //     });
+
+        //     function autotimer() { timer = setInterval(addSlider, 3000); }
+
+        //     autotimer();
+        // });
+        document.addEventListener("DOMContentLoaded", function () {
+            var row = document.querySelector(".row");
+            var images = row.querySelectorAll("img");
+            var clienTWidth = images[0].clientWidth;
+            var totalCount = images.length;
+            var count = 1; // Initialize count to 1
+
+            // Create indicators
+            var indicatorsContainer = document.querySelector(".indicators");
+            for (var i = 0; i < totalCount; i++) {
+                var indicator = document.createElement("div");
+                indicator.classList.add("indicator");
+                indicator.setAttribute("data-index", i + 1); // Adjust index to start from 1
+                indicatorsContainer.appendChild(indicator);
+            }
+
+            let timer;
+
+            document.querySelector(".dd").addEventListener("click", function (e) {
+                addSlider();
+               
+            });
+
+            document.querySelector(".dd").addEventListener("mouseenter", function (e) {
+                clearInterval(timer);
+            });
+
+            document.querySelector(".dd").addEventListener("mouseleave", function (e) {
+                autotimer();
+            });
+
+            document.querySelectorAll(".indicator").forEach(function (indicator) {
+                indicator.addEventListener("click", function () {
+                    var index = parseInt(indicator.getAttribute("data-index"));
+                    scrollToIndex(index);
+                });
+            });
+
+            function addSlider() {
+                if (row.scrollLeft + row.offsetWidth >= row.scrollWidth) {
+                    row.scrollLeft = 0; // Reset scroll if reached the end
+                    count = 1; // Reset count
+                } else {
+                    row.scrollLeft += clienTWidth + 15;
+                    count++; // Increment count
+                }
+
+                // Update active indicator
+                updateIndicators();
+                document.querySelector(".dd").innerText=count
+            }
+
+            document.querySelector(".rrtt").addEventListener("click", function () {
+                if (row.scrollLeft + row.offsetWidth <= row.scrollWidth) {
+                    row.scrollLeft = 0;
+                    count = 1; // Reset count
+                } else {
+                    row.scrollLeft -= clienTWidth + 15;
+                    count--; // Decrement count
+                }
+
+                // Update active indicator
+                updateIndicators();
+            });
+
+            function autotimer() {
+                timer = setInterval(addSlider, 3000);
+            }
+
+            function updateIndicators() {
+                // Remove active class from all indicators
+                document.querySelectorAll(".indicator").forEach(function (indicator) {
+                    indicator.classList.remove("active");
+                });
+
+                // Add active class to the current indicator
+                var currentIndicator = document.querySelector(`.indicator[data-index="${count}"]`);
+                currentIndicator.classList.add("active");
+
+            }
+
+            function scrollToIndex(index) {
+                row.scrollLeft = (index - 1) * (clienTWidth + 15); // Adjust index to start from 0
+                count = index; // Update count
+                updateIndicators(); // Update active indicator
+                document.querySelector(".dd").innerText=count
+            }
+
+            autotimer(); // Start the timer initially
+        });
+
 
     </script>
 </body>
