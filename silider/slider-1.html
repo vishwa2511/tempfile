@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        max-width: 1200px;
+        margin: 0px auto;
+
+    }
+
+    .row {
+        white-space: nowrap;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    img {
+        width: 33.33%;
+        height: 300px;
+        margin-left: 15px;
+
+    }
+
+    img:first-child {
+        margin-left: 0px;
+    }
+</style>
+
+<body>
+
+    <div class="wrapper">
+        <button>1</button>
+        <div class="row">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+            <img src="https://th.bing.com/th/id/OIP.u5jd2IbRxY-2XbqPYC4AAgHaEo?rs=1&pid=ImgDetMain" alt="" srcset="">
+
+        </div>
+        <button class="dd">2</button>
+    </div>
+
+    <script>
+        var rows = document.querySelector(".row");
+        document.querySelector(".dd").addEventListener("click",(e)=>{
+            // rows.scrollLeft
+            console.log(e);
+        })
+        
+
+    </script>
+</body>
+
+</html>

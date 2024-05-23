@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Website</title>
+    <meta http-equiv="content-type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="vishwahari" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- <link href="asstes/image/favicon.ico" rel="shortcut icon"> -->
+    <!-- SEO Details -->
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!-- Theme Color -->
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#FFFFFF"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#000000"
+    />
+    <!-- Preloads -->
+    <link rel="preload" href="" as="image" />
+    <!-- <link rel="preload" href="" as="style"> -->
+    <!-- <link rel="preload" href="" as="script"> -->
+
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+
+  <body>
+    <main>
+      <section class="main-section">
+        <div class="defulat-container">
+          <div class="btn-content">
+            <a href="javascript:;" class="active btn-link">slider</a>
+            <a href="javascript:;" class="btn-link">transition</a>
+            <a href="javascript:;" class="btn-link">Stoptimer</a>
+          </div>
+          <div class="section-container">
+            <div class="section-list slider-section active">
+              <div>
+                <slider class="slider">
+                  <silderlist class="silderlist active"
+                    ><img
+                      src="https://placehold.co/600x400?text=IMAGE-1"
+                      alt=""
+                      srcset=""
+                    />
+                  </silderlist>
+                  <silderlist class="silderlist"
+                    ><img
+                      src="https://placehold.co/600x400?text=IMAGE-2"
+                      alt=""
+                      srcset=""
+                    />
+                  </silderlist>
+                  <silderlist class="silderlist"
+                    ><img
+                      src="https://placehold.co/600x400?text=IMAGE-3"
+                      alt=""
+                      srcset=""
+                    />
+                  </silderlist>
+                  <silderlist class="silderlist"
+                    ><img
+                      src="https://placehold.co/600x400?text=IMAGE-4"
+                      alt=""
+                      srcset=""
+                    />
+                  </silderlist>
+                  <silderlist class="silderlist"
+                    ><img
+                      src="https://placehold.co/600x400?text=IMAGE-5"
+                      alt=""
+                      srcset=""
+                    />
+                  </silderlist>
+                </slider>
+              </div>
+              <div class="ragin-btn">
+                <input
+                  type="range"
+                  min="1"
+                  max="5"
+                  value="1"
+                  id="range-btn"
+                  step="1"
+                />
+              </div>
+            </div>
+            <div class="section-list transition-section">
+              <div class="col-50">
+                <p class="left">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti adipisci ducimus quam voluptatem ipsam, nulla quis
+                  laboriosam? Rem quibusdam animi fugiat aliquam corporis.
+                  Placeat provident reprehenderit illum numquam! Consequuntur,
+                  nam?
+                </p>
+              </div>
+              <div class="col-50">
+                <p class="leftx">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti adipisci ducimus quam voluptatem ipsam, nulla quis
+                  laboriosam? Rem quibusdam animi fugiat aliquam corporis.
+                  Placeat provident reprehenderit illum numquam! Consequuntur,
+                  nam?
+                </p>
+              </div>
+              <div class="col-50">
+                <p class="height">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti adipisci ducimus quam voluptatem ipsam, nulla quis
+                  laboriosam? Rem quibusdam animi fugiat aliquam corporis.
+                  Placeat provident reprehenderit illum numquam! Consequuntur,
+                  nam?
+                </p>
+              </div>
+              <div class="col-50">
+                <p class="right">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti adipisci ducimus quam voluptatem ipsam, nulla quis
+                  laboriosam? Rem quibusdam animi fugiat aliquam corporis.
+                  Placeat provident reprehenderit illum numquam! Consequuntur,
+                  nam?
+                </p>
+              </div>
+            </div>
+            <div class="section-list stoptimer-section">
+              <div class="count">
+                <div class="count-list">
+                  <span class="min">00</span>: <span class="sec">00</span>
+                </div>
+                <div class="btnlist">
+                  <a href="javascript:;" class="playBtn">play/pause</a>
+                  <a href="javascript:;" class="stopBtn"> stop /reseta</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <header></header>
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll(".btn-link").forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              removeClass({ class: ".btn-link" });
+              removeClass({ class: ".section-list" });
+              document
+                .querySelector(`.${btn.innerText.toLowerCase()}-section`)
+                .classList.add("active");
+              document
+                .querySelector(".btn-content")
+                .style.setProperty("---left", btn.offsetLeft + "px");
+              document
+                .querySelector(".btn-content")
+                .style.setProperty("--width", btn.offsetWidth + "px");
+
+              if (btn.innerText.toLowerCase() === "transition") {
+                setTimeout((e) => {
+                  document.querySelector(".left").style.opacity = "1";
+                  document.querySelector(".leftx").style.transform =
+                    "translateX(0px)";
+                  document.querySelector(".height").style.height = "180px";
+                  document.querySelector(".right").style.transform =
+                    "translateX(0px)";
+                }, 500);
+              } else {
+                document.querySelector(".left").style.opacity = "0";
+                document.querySelector(".leftx").style.transform =
+                  "translateX(-400px)";
+                document.querySelector(".height").style.height = "0px";
+                document.querySelector(".right").style.transform =
+                  "translateX(400px)";
+              }
+              e.target.classList.add("active");
+            });
+          });
+
+          const removeClass = (remove) => {
+            document
+              .querySelectorAll(remove.class)
+              .forEach((btns) => btns.classList.remove("active"));
+          };
+
+          document
+            .getElementById("range-btn")
+            .addEventListener("change", (e) => {
+              const selectedIndex = parseInt(e.target.value - 1);
+              document
+                .querySelectorAll(".silderlist")
+                .forEach((slider, index) => {
+                  if (index === selectedIndex) {
+                    slider.classList.add("active");
+                  } else {
+                    slider.classList.remove("active");
+                  }
+                });
+            });
+
+          let sec = (min = 0),
+            settime,
+            flag = false;
+          document.querySelector(".playBtn").addEventListener("click", (e) => {
+            if (!flag) {
+              settime = setInterval(() => {
+                sec++;
+                if (sec == 60) {
+                  min++;
+                }
+                updateTime();
+              }, 1000);
+              flag = true;
+            } else {
+              clearInterval(settime);
+              flag = false;
+            }
+          });
+
+          document.querySelector(".stopBtn").addEventListener("click", (e) => {
+            sec = min = 0;
+            clearInterval(settime);
+            updateTime();
+            flag = false;
+          });
+
+          const updateTime = () => {
+            document.querySelector(".sec").innerText =
+              sec < 10 ? "0" + sec : sec;
+            document.querySelector(".min").innerText =
+              min < 10 ? "0" + min : min;
+          };
+        });
+      </script>
+    </main>
+  </body>
+</html>

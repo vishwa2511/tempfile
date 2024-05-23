@@ -1,0 +1,259 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+/************************* Reset CSS Start *************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+  font-size: 100%;
+  font-weight: 300;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+ol,
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  white-space: revert;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/************************* Reset CSS End *************************/
+/************************* root CSS Start *************************/
+:root {
+  --primary-color: #525659;
+  --secondary-color: #c1272d;
+  --h1-text: clamp(10px, 4vw, 10rem);
+  --h2-text: clamp(20px, 4vw, 60px);
+  --h3-text: clamp(20px, 3vw, 60px);
+  --h4-text: clamp(16px, 2.4vw, 60px);
+  --h5-text: clamp(12px, 2vw, 60px);
+  --h6-text: clamp(13px, 2vw, 18px);
+}
+/************************* root CSS End *************************/
+/************************* Resuse CSS Start *************************/
+.col-50 {
+  width: 50%;
+}
+.defulat-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0px auto;
+}
+/************************* Resuse CSS End *************************/
+html {
+  color-scheme: dark light;
+}
+html body {
+  background-color: aliceblue;
+}
+html body main section.main-section {
+  height: 100vh;
+}
+html body main section.main-section .defulat-container {
+  flex-direction: column;
+}
+html body main section.main-section .defulat-container .btn-content {
+  display: flex;
+  position: relative;
+}
+html body main section.main-section .defulat-container .btn-content::after {
+  content: "";
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  width: var(--width, 84px);
+  transform-origin: 0 top;
+  height: 2px;
+  left: 0;
+  top: 0;
+  transform: translate(var(---left, 0px), 0px);
+  background-color: #c1272d;
+  z-index: 1;
+}
+html body main section.main-section .defulat-container .btn-content a {
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 1;
+  padding: 15px 20px;
+  background-color: gray;
+  font-size: var(--h6-text);
+  color: black;
+  transition: all 0.4s ease-in-out;
+  border: 2px solid transparent;
+  border-bottom: 0;
+  border-top: 0;
+}
+html body main section.main-section .defulat-container .btn-content a.active {
+  background-color: white;
+  border-color: gray;
+}
+html body main section.main-section .defulat-container .section-container {
+  border: 2px solid gray;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: white;
+  color: #525659;
+}
+html body main section.main-section .defulat-container .section-container .section-list {
+  display: none;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section {
+  padding: 20px;
+  flex-direction: column;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .slider {
+  display: flex;
+  height: 400px;
+  width: 600px;
+  position: relative;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .slider .silderlist {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: none;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .slider .silderlist.active {
+  display: block;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .ragin-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .ragin-btn input {
+  width: 100%;
+  background-color: #525659;
+  outline: none;
+  appearance: none;
+  height: 10px;
+  border-radius: 10px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.slider-section .ragin-btn input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20%;
+  height: 15px;
+  border-radius: 10%;
+  background: red;
+  cursor: pointer;
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section {
+  flex-wrap: wrap;
+  color: #525659;
+  padding: 80px 100px;
+  gap: 50px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section .col-50 {
+  height: 180px;
+  display: block;
+  overflow: hidden;
+  width: calc(50% - 25px);
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section .col-50:nth-child(1) p {
+  width: calc(100% - 40px);
+  font-size: 18px;
+  text-align: justify;
+  opacity: 0;
+  transition: 3s;
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section .col-50:nth-child(2) p {
+  width: calc(100% - 40px);
+  font-size: 18px;
+  text-align: justify;
+  transform: translateX(-400px);
+  transition: 3s;
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section .col-50:nth-child(3) p {
+  width: calc(100% - 40px);
+  font-size: 18px;
+  text-align: justify;
+  height: 0;
+  transition: 3s;
+  overflow: hidden;
+}
+html body main section.main-section .defulat-container .section-container .section-list.transition-section .col-50:nth-child(4) p {
+  width: calc(100% - 40px);
+  font-size: 18px;
+  text-align: justify;
+  height: 0;
+  transform: translateX(400px);
+  transition: 3s;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section {
+  padding: 200px 100px;
+  align-items: center;
+  justify-content: center;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .count-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--h2-text);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .btnlist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .btnlist a {
+  font-size: var(--h6-text);
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font-weight: 700;
+  color: aliceblue;
+  transition: all 0.4s ease-in-out;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .btnlist a:nth-child(1) {
+  background-color: green;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .btnlist a:nth-child(2) {
+  background-color: #c1272d;
+}
+html body main section.main-section .defulat-container .section-container .section-list.stoptimer-section .btnlist a:hover {
+  border-radius: 6px;
+}
+html body main section.main-section .defulat-container .section-container .section-list.active {
+  display: flex;
+}
+/*************************** Responisve Start ***************************/
+/*************************** Responisve End ***************************/

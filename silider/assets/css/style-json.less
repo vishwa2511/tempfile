@@ -1,0 +1,103 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/************************* Reset CSS Start *************************/
+* {
+  margin: 0px;
+  padding: 0px;
+  font: inherit;
+  font-size: 100%;
+  font-weight: 300;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+textarea {
+  white-space: revert;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/************************* Reset CSS End *************************/
+
+/************************* root CSS Start *************************/
+:root {
+  --primary-color: #525659;
+  --secondary-color: #c1272d;
+  --h1-text: clamp(10px, 4vw, 10rem);
+  --h2-text: clamp(20px, 4vw, 60px);
+  --h3-text: clamp(20px, 3vw, 60px);
+  --h4-text: clamp(16px, 2.4vw, 60px);
+  --h5-text: clamp(12px, 2vw, 60px);
+  --h6-text: clamp(13px, 2vw, 18px);
+}
+
+.col-30 {
+  width: 30%;
+}
+.col-70 {
+  width: 70%;
+}
+.defulat-container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0px auto;
+}
+
+html {
+  color-scheme: dark light;
+  body {
+    main {
+      section {
+        &.main-sec {
+          .defulat-container {
+          }
+        }
+      }
+    }
+  }
+}
